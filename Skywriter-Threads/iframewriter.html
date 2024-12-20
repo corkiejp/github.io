@@ -47,31 +47,18 @@
     allowfullscreen>
 	</iframe>
 
-
-
     <script>
-	function loadUrl() {
-    if (window.location.origin === 'https://corkiejp.github.io') {
-        const urlParams = new URLSearchParams(window.location.search);
-        const url = urlParams.get('url');
-        if (url) {
-            document.getElementById('threadsFrame').src = decodeURIComponent(url);
-        } else {
-            console.error('No URL provided');
-        }
-    } else {
-        console.error('Access not allowed from this domain');
-    }
-}
-window.onload = loadUrl;
-
         function loadUrl() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const url = urlParams.get('url');
-            if (url) {
-                document.getElementById('threadsFrame').src = decodeURIComponent(url);
+            if (window.location.origin === 'https://corkiejp.github.io') {
+                const urlParams = new URLSearchParams(window.location.search);
+                const url = urlParams.get('url');
+                if (url) {
+                    document.getElementById('threadsFrame').src = decodeURIComponent(url);
+                } else {
+                    console.error('No URL provided');
+                }
             } else {
-                console.error('No URL provided');
+                console.error('Access not allowed from this domain');
             }
         }
         window.onload = loadUrl;
