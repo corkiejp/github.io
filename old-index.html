@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head><title>Welcome to corkiejp's Social World!</title>
+<!link http-equiv="refresh" content="0;url=https://bsky.app/profile/did:plc:qxlh6bohvep3taqhmtpipx4b">
+<style>
+body {
+  background-image: url('assets/images/about/pexels-jplenio-1103970.jpg');
+}
+</style>
+</head>
+<body><center>
+<h1>Welcome to corkiejp's Social World!</h1>
+<h2>Why does publishing pages on Github pages have to be so commplicated!</h2>
+<p style="font-size: 24px; color: gray;">Redirecting to <a href="https://bsky.app/profile/did:plc:qxlh6bohvep3taqhmtpipx4b">https://bsky.app/profile/corkiejp.github.io</a></p>
+<br><br></center>
+
+<ul style="font-size: 24px; color: blue;">
+  <li><a href="https://bsky.app/hashtag/permalinkdidprofile"><b>#permalinkdidprofile</b></a> 
+	  - See reasons why it is required to use these! 
+	  By clicking <a href="https://github.com/corkiejp/Corkiejp-notes-on-awesome-bluesky/blob/main/Important-correct_method_to_link_your_profile.md"><b>Here!</b></a><br> <br></li>
+  <li>
+      <a href="https://bsky.app/hashtag/permalinkblueskyposts"><b>#permalinkblueskyposts</b></a> 
+	  - Link posts using this method, to make sure it is correctly linked
+	  See more by clicking 
+	  <a href="https://github.com/corkiejp/Corkiejp-notes-on-awesome-bluesky/blob/main/Important-correct_method_to_link_your_profile.md#create-permalinks-for-bluesky-posts-or-threads">
+		  <b>Here!</b></a><br>	  
+  </li>
+</ul>  	
+<br>
+<p style="font-size: 24px; color: blue;">While here you could checkout <a href="https://corkiejp.github.io/corkiejp.html">corkiejp's Social World</a> -- Github Page</p>
+<p style="font-size: 24px; color: blue;">or <a href="https://github.com/corkiejp/Corkiejp-notes-on-awesome-bluesky">corkiejp-notes-on-awesome-bluesky</a> ...</p>
+<br>
+<br>
+
+<p style="font-size: 24px; color: blue;"><b>SOLVED</b>: <br>
+	The problems with 'Invalid Handle', I experienced was of my own creation, <br>
+	when I was forced to reconfigured my github domain, due to an error I made!<br>
+<br>See: - <a href="https://bsky.app/profile/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ld5n6727rs2l">My bluesky thread on it!</a>
+
+<!script document.location.href = "https://bsky.app/profile/corkiejp.github.io";><!/script>
+<br>
+<br>
+<p style="font-size: 16px; color: black;"><a href="https://www.pexels.com/photo/gray-and-white-wallpaper-1103970/">Background Photo by Johannes Plenio</a></p>
+
+
+	
+	<script> 
+		(function () { 
+
+			// Ideal time in seconds 
+			const idleDurationSecs = 15; 
+
+			// Redirect idle users to this URL 
+			const redirectUrl =  
+				'https://bsky.app/profile/did:plc:qxlh6bohvep3taqhmtpipx4b'; 
+			
+			// Variable to hold the timeout 
+			let idleTimeout; 
+
+			const resetIdleTimeout = function () { 
+
+				// Clears the existing timeout 
+				if (idleTimeout) 
+					clearTimeout(idleTimeout); 
+
+				// Set a new idle timeout to load the 
+				// redirectUrl after idleDurationSecs 
+				idleTimeout = setTimeout(() => location.href 
+					= redirectUrl, idleDurationSecs * 1000); 
+			}; 
+
+			// Init on page load 
+			resetIdleTimeout(); 
+
+			// Reset the idle timeout on any of 
+			// the events listed below 
+			['click', 'touchstart', 'mousemove'] 
+				.forEach(evt => document.addEventListener( 
+					evt, resetIdleTimeout, false) 
+			); 
+		})(); 
+	</script> 
+
+</body>
+</html>
