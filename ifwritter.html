@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Welcome to corkiejp's Social World!</title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+		<!--flat icon css-->
+		<link rel="stylesheet" href="assets/css/flaticon.css">
+
+		<!--animate.css-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+
+        <!--owl.carousel.css-->
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="assets/css/responsive.css">
+		
+
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		
+        <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+	
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+		
+<!-- top-area Start -->
+		<header class="top-area">
+			<div class="header-area">
+				<!-- Start Navigation -->
+			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+
+			        <div class="container">
+
+			            <!-- Start Header Navigation -->
+			            <div class="navbar-header">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			                    <i class="fa fa-bars"></i>
+			                </button>
+			                <a class="navbar-brand" href="corkiejp.html">corkiejp</a>
+			            </div><!--/.navbar-header-->
+			            <!-- End Header Navigation -->
+
+			            <!-- Collect the nav links, forms, and other content for toggling -->
+			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+			                <li class=" smooth-menu active"></li>
+								<li class="nav-link"><a href="./Skywriter-Threads/Page by Nicolò Ribaudo _ @nicr.dev.html" target="threadsFrame">Handle Blog</a></li>
+								<li class="nav-link"><a href="https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ld5khcppwh2w" target="threadsFrame">Careful Github</a></li>
+								<li class="nav-link"><a href="https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ldteyuflwe2n" target="threadsFrame">Learned Skills</a></li>								
+							
+			                </ul><!--/.nav -->
+			            </div><!-- /.navbar-collapse -->
+			        </div><!--/.container-->
+			    </nav><!--/nav!
+			    <!-- End Navigation -->
+			</div><!--/.header-area-->
+
+
+		</header><!-- /.top-area-->
+		<!-- top-area End -->
+	
+
+
+		<!--about start -->
+		<section id="mysocials" class="about">
+			<div class="container">
+				<div class="about-content">
+ Click on 'Corkiejp' above to return to main page. <br>
+ Enter a site you would like to visit without any blocking.<br> 
+ Some websites do not allow their site into an iframe and <br>you will need to enter the https://. 
+
+  <input type="text" id="linkInput" placeholder="Enter a link">  
+  <button id="loadButton">Load Link</button>
+  <button id="reloadButton">&#x21bb;</button> 
+  <select id="linkDropdown"> 
+    <option value="">-- Select a site --</option>
+    <option value="./Skywriter-Threads/Page by Nicolò Ribaudo _ @nicr.dev.html">Handle Blog</option>
+	<option value="https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ld5khcppwh2w">careful github</option>
+	<option value="https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ldteyuflwe2n">Learned Skills</option>	
+  </select>
+  <button id="darkModeToggle" style="position: fixed; top: 10px; right: 10px;">
+    <span id="darkModeIcon">🌙</span>
+  </button>
+    <iframe id="threadsFrame" name="threadsFrame" src="about:blank"
+	style="width: 100%; height: calc(100vh - 100px);" frameborder="0"
+    allowfullscreen>
+	</iframe>
+
+				
+				</div>
+			</div>
+		</section><!--/.about-->
+		<!--about end -->
+
+    <script>
+        function loadUrl() {
+            if (window.location.origin === 'https://corkiejp.github.io') {
+                const urlParams = new URLSearchParams(window.location.search);
+                const url = urlParams.get('url');
+                if (url) {
+                    document.getElementById('threadsFrame').src = decodeURIComponent(url);
+                } else {
+                    console.error('No URL provided');
+                }
+            } else {
+                console.error('Access not allowed from this domain');
+            }
+        }
+        window.onload = loadUrl;
+    </script>
+	
+	
+	
+	
+	
+	 <script>
+    function loadIframe(link) {
+      const iframe = document.getElementById("threadsFrame");
+      if (link) {
+        iframe.src = link;
+      }
+    }    
+
+    document.getElementById('loadButton').addEventListener('click', function() {
+      loadIframe(document.getElementById('linkInput').value);
+    });
+    
+    document.getElementById('linkDropdown').addEventListener('change', function() {
+      loadIframe(this.value);
+    });
+
+    // Check for saved theme preference on load
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('darkModeIcon').textContent = '☀️';
+    }
+
+    document.getElementById('darkModeToggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+
+      const darkModeIcon = document.getElementById('darkModeIcon');
+      if (document.body.classList.contains('dark-mode')) {
+        darkModeIcon.textContent = '☀️';
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        darkModeIcon.textContent = '🌙';
+        localStorage.setItem('darkMode', 'disabled');
+      }
+      
+      // You can add logic here to store the user's preference
+      // using localStorage if you want the theme to persist
+      // across page reloads.
+    });
+
+    document.getElementById('reloadButton').addEventListener('click', function() {
+      document.getElementById('myIframe').src = document.getElementById('myIframe').src;
+    });
+
+  </script>			
+	
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+		<script src="assets/js/jquery.js"></script>
+		  <script src="./assets/js/bsky-embed.es.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+		
+		<!-- jquery.sticky.js -->
+		<script src="assets/js/jquery.sticky.js"></script>
+		
+		<!-- for progress bar start-->
+
+		<!-- progressbar js -->
+		<script src="assets/js/progressbar.js"></script>
+
+		<!-- appear js -->
+		<script src="assets/js/jquery.appear.js"></script>
+
+		<!-- for progress bar end -->
+
+		<!--owl.carousel.js-->
+        <script src="assets/js/owl.carousel.min.js"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		
+        
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+		
+
+        
+    </body>
+	
+</html>
