@@ -140,7 +140,24 @@
         window.onload = loadUrl;
     </script>
 	
-	
+	<script>
+	window.addEventListener('load', function() {
+    var iframe = document.getElementById('threadsFrame');
+    iframe.addEventListener('load', function() {
+        try {
+            iframe.contentWindow.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    window.open(e.target.href, '_blank');
+                }
+            }, true);
+        } catch (error) {
+            console.log('Cannot access iframe content due to same-origin policy');
+        }
+    });
+});
+
+	</script>
 	
 	
 	
