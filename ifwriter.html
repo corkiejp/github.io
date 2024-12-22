@@ -113,9 +113,7 @@
 	<option value="https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ld5khcppwh2w">careful github</option>
 	<option value="https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ldteyuflwe2n">Learned Skills</option>	
   </select>
-  <button id="darkModeToggle" style="position: fixed; top: 10px; right: 10px;">
-    <span id="darkModeIcon">🌙</span>
-  </button>
+  
     <iframe id="threadsFrame" name="threadsFrame" src="about:blank"
 	style="width: 100%; height: calc(100vh - 100px);" frameborder="0"
     allowfullscreen>
@@ -170,22 +168,6 @@
       document.getElementById('darkModeIcon').textContent = '☀️';
     }
 
-    document.getElementById('darkModeToggle').addEventListener('click', function() {
-      document.body.classList.toggle('dark-mode');
-
-      const darkModeIcon = document.getElementById('darkModeIcon');
-      if (document.body.classList.contains('dark-mode')) {
-        darkModeIcon.textContent = '☀️';
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
-        darkModeIcon.textContent = '🌙';
-        localStorage.setItem('darkMode', 'disabled');
-      }
-      
-      // You can add logic here to store the user's preference
-      // using localStorage if you want the theme to persist
-      // across page reloads.
-    });
 
     document.getElementById('reloadButton').addEventListener('click', function() {
       document.getElementById('myIframe').src = document.getElementById('myIframe').src;
