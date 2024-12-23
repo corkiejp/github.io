@@ -30,84 +30,15 @@
   <br><b>This webpage resource will be removed, newer version available at</b><br>
   <a href="https://corkiejp.github.io/ifwriter.html">https://corkiejp.github.io/ifwriter.html</a>
   
-  <br>Enter a site you would like to visit without any blocking. Some websites do not allow their site into an iframe (which is the box where the website is in) and you will need to enter the https://.</p>  
+<p style="font-size: 24px; font-family: sans-serif; align="center">
 
-  <input type="text" id="linkInput" placeholder="Enter a link">  
-  <button id="loadButton">Load Link</button>
-  <button id="reloadButton">&#x21bb;</button> 
-  <select id="linkDropdown"> 
-    <option value="">-- Select a site --</option>
-    <option value="./Page by Nicolò Ribaudo _ @nicr.dev.html">Github Handle</option>
-	<option value="https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ld5khcppwh2w">careful github</option>
-	<option value="https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3ldteyuflwe2n">Learned Skills</option>	
-  </select>
-  <button id="darkModeToggle" style="position: fixed; top: 10px; right: 10px;">
-    <span id="darkModeIcon">🌙</span>
-  </button>
-    <iframe id="threadsFrame" src="about:blank"
-	style="width: 100%; height: calc(100vh - 100px);" frameborder="0"
-    allowfullscreen>
-	</iframe>
+This resource is now <b>deprecated</b> it was just a testing page to check the functions out and get them working correctly.<br>
+The link that may have got you here was probably to the below: -<br><br>
+<a href="https://corkiejp.github.io/ifwriter.html?url=./Skywriter-Threads/Learned%20Skills%20by%20John%20O%20Connell%20{alt%20for%20corkiejp.bsky.social}%20_%20@corkiejp.github.io.html">Learned Skills</a><br><br>
 
-    <script>
-        function loadUrl() {
-            if (window.location.origin === 'https://corkiejp.github.io') {
-                const urlParams = new URLSearchParams(window.location.search);
-                const url = urlParams.get('url');
-                if (url) {
-                    document.getElementById('threadsFrame').src = decodeURIComponent(url);
-                } else {
-                    console.error('No URL provided');
-                }
-            } else {
-                console.error('Access not allowed from this domain');
-            }
-        }
-        window.onload = loadUrl;
-    </script>
-	 <script>
-    function loadIframe(link) {
-      const iframe = document.getElementById("threadsFrame");
-      if (link) {
-        iframe.src = link;
-      }
-    }    
+Now with improvements, with links in the iframe opening in parent page, for links hosted on the same site as this!
 
-    document.getElementById('loadButton').addEventListener('click', function() {
-      loadIframe(document.getElementById('linkInput').value);
-    });
-    
-    document.getElementById('linkDropdown').addEventListener('change', function() {
-      loadIframe(this.value);
-    });
+</p>
 
-    // Check for saved theme preference on load
-    if (localStorage.getItem('darkMode') === 'enabled') {
-      document.body.classList.add('dark-mode');
-      document.getElementById('darkModeIcon').textContent = '☀️';
-    }
-
-    document.getElementById('darkModeToggle').addEventListener('click', function() {
-      document.body.classList.toggle('dark-mode');
-
-      const darkModeIcon = document.getElementById('darkModeIcon');
-      if (document.body.classList.contains('dark-mode')) {
-        darkModeIcon.textContent = '☀️';
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
-        darkModeIcon.textContent = '🌙';
-        localStorage.setItem('darkMode', 'disabled');
-      }
-      
-      // You can add logic here to store the user's preference
-      // using localStorage if you want the theme to persist
-      // across page reloads.
-    });
-
-    document.getElementById('reloadButton').addEventListener('click', function() {
-      document.getElementById('myIframe').src = document.getElementById('myIframe').src;
-    });
-
-  </script>
 </body>
 </html>
