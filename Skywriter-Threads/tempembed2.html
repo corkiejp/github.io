@@ -29,7 +29,7 @@ Testing an embed script and not an iframe!
       embeddedDocument.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
           e.preventDefault();
-          window.open(e.target.href, '_blank');
+          window.open(e.target.href, '_parent');
         }
       });
     });
