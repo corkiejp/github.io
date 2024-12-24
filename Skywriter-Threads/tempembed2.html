@@ -10,29 +10,30 @@
 <div style="text-align: center;">
 Testing an embed script and not an iframe!
 <br><br>
-  <script>
-  (function() {
-    var embedContainer = document.createElement('div');
-    embedContainer.id = 'skywriter-embed';
-    embedContainer.style.width = '600px';
-    embedContainer.style.maxWidth = '800px'; // Adjust as needed
-    embedContainer.style.margin = '0 auto';
-    
-    var embedObject = document.createElement('object');
-    embedObject.type = 'text/html';
-    embedObject.data = './Page by Nicolò Ribaudo _ @nicr.dev.html';
-    embedObject.width = '600';
-    embedObject.height = '600';
-    
+<script>
+(function() {
+  var embedContainer = document.createElement('div');
+  embedContainer.id = 'skywriter-embed';
+  embedContainer.style.width = '100%'; // Increase width to 100%
+  
+  var embedObject = document.createElement('object');
+  embedObject.type = 'text/html';
+  embedObject.data = './Page by Nicolò Ribaudo _ @nicr.dev.html';
+  embedObject.width = '100%';
+  embedObject.height = '600';
+  
+  // Add a base target to ensure links open in parent page
+  var baseElement = document.createElement('base');
+  baseElement.target = '_parent';
+  embedObject.appendChild(baseElement);
+  
+  embedContainer.appendChild(embedObject);
+  
+  document.currentScript.parentNode.insertBefore(embedContainer, document.currentScript);
+})();
+</script>
 
 
-    });
-    
-    embedContainer.appendChild(embedObject);
-    
-    document.currentScript.parentNode.insertBefore(embedContainer, document.currentScript);
-  })();
-  </script>
 </div>
 
 
