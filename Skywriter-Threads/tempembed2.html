@@ -24,14 +24,7 @@ Testing an embed script and not an iframe!
     embedObject.width = '600';
     embedObject.height = '600';
     
-    embedObject.addEventListener('load', function() {
-      var embeddedDocument = embedObject.contentDocument || embedObject.contentWindow.document;
-      embeddedDocument.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A') {
-          e.preventDefault();
-          window.open(e.target.href, '_parent');
-        }
-      });
+
     });
     
     embedContainer.appendChild(embedObject);
