@@ -82,7 +82,7 @@
 								<li class="nav-link"><a href="./Skywriter-Threads/Page by Nicolò Ribaudo _ @nicr.dev.html" target="threadsFrame">Handle Blog</a></li>
 								<li class="nav-link"><a href="./Skywriter-Threads/Careful Github by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.blue.html" target="threadsFrame">Careful Github</a></li>
 								<li class="nav-link"><a href="./Skywriter-Threads/Learned Skills by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.html" target="threadsFrame">Learned Skills</a></li>								
-								<li class="nav-link"><a href="./embedwriter.html" target="_parent">Page with embed Code!</a></li>								
+								<li class="nav-link"><a href="./embedwriter.html" target="_parent">To page with embed Code!</a></li>								
 							
 			                </ul><!--/.nav -->
 			            </div><!-- /.navbar-collapse -->
@@ -114,31 +114,41 @@
 	<option value="./Skywriter-Threads/Careful Github by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.blue.html">careful github</option>
 	<option value="./Skywriter-Threads/Learned Skills by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.html">Learned Skills</option>	
   </select>
+  <br><br>
+   <h2> Below is contained in an iframe, click on 'embed writer' below to pass the url to that!</h2>
+   Link in menu above clears the url!
+
   
     <iframe id="threadsFrame" name="threadsFrame" src="./Skywriter-Threads/tempifpage.html" style="width: 100%; height: calc(100vh - 100px);" frameborder="0" allowfullscreen>
 	</iframe>
-
+<br><br>
 				
 				</div>
+
+<div style="text-align: center;">
+
+<ul id="linkContainer"></ul>
+
+    <script src="./assets/js/urlscript.js"></script> <!-- Include your JavaScript here -->
+
+</div>				
+				
 			</div>
 		</section><!--/.about-->
 		<!--about end -->
 
     <script>
-        function loadUrl() {
-            if (window.location.origin === 'https://corkiejp.github.io') {
-                const urlParams = new URLSearchParams(window.location.search);
-                const url = urlParams.get('url');
-                if (url) {
-                    document.getElementById('threadsFrame').src = decodeURIComponent(url);
-                } else {
-                    console.error('No URL provided');
-                }
-            } else {
-                console.error('Access not allowed from this domain');
-            }
-        }
-        window.onload = loadUrl;
+function loadUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const url = urlParams.get('url');
+    if (url) {
+        document.getElementById('threadsFrame').src = decodeURIComponent(url);
+    } else {
+        console.error('No URL provided');
+    }
+}
+window.onload = loadUrl;
+
     </script>
 	
 	<script>
