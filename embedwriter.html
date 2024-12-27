@@ -112,51 +112,75 @@
  
 
   <script>
-  (function() {
-    function getParameterByName(name, url = window.location.href) {
-      name = name.replace(/[\[\]]/g, '\\$&');
-      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-          results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+(function() {
+  function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
+
+  var defaultUrl = './Skywriter-Threads/tempifpage.html';
+  var embedUrl = getParameterByName('url') || defaultUrl;
+
+  var embedContainer = document.createElement('div');
+  embedContainer.id = 'skywriter-embed';
+  embedContainer.style.width = '100%';
+  embedContainer.style.maxWidth = '1000px';
+  embedContainer.style.margin = '0 auto';
+  
+  var embedObject = document.createElement('object');
+  embedObject.id = 'embedContent';
+  embedObject.type = 'text/html';
+  embedObject.data = embedUrl;
+  embedObject.width = '100%';
+  embedObject.height = '600';
+  
+  var loadTimeout;
+  var contentLoaded = false;
+
+  function showError(message) {
+    var errorDiv = document.createElement('div');
+    errorDiv.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`;
+    embedContainer.appendChild(errorDiv);
+  }
+
+  embedObject.onload = function() {
+    clearTimeout(loadTimeout);
+    contentLoaded = true;
+    // Content loaded successfully, no need to show any error
+  };
+
+  embedObject.onerror = function() {
+    showError("Error loading content. The resource might be unavailable or blocked.");
+  };
+
+  loadTimeout = setTimeout(function() {
+    if (!contentLoaded) {
+      showError("Content failed to load within the expected time. It may be blocked or unavailable.");
     }
+  }, 10000); // 10 second timeout
 
-    var defaultUrl = './Skywriter-Threads/tempifpage.html';
-    var embedUrl = getParameterByName('url') || defaultUrl;
+  embedContainer.appendChild(embedObject);
+  
+  document.currentScript.parentNode.insertBefore(embedContainer, document.currentScript);
 
-    var embedContainer = document.createElement('div');
-    embedContainer.id = 'skywriter-embed';
-    embedContainer.style.width = '100%';
-    embedContainer.style.maxWidth = '1000px';
-    embedContainer.style.margin = '0 auto';
-    
-    var embedObject = document.createElement('object');
-    embedObject.id = 'embedContent';
-    embedObject.type = 'text/html';
-    embedObject.data = embedUrl;
-    embedObject.width = '100%';
-    embedObject.height = '600';
-    
-    embedObject.addEventListener('load', function() {
-      var embeddedDocument = embedObject.contentDocument || embedObject.contentWindow.document;
-      embeddedDocument.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A') {
-          e.preventDefault();
-          window.parent.location.href = e.target.href;
-        }
-      });
-    });
-    
-    embedContainer.appendChild(embedObject);
-    
-    document.currentScript.parentNode.insertBefore(embedContainer, document.currentScript);
+  window.changeContent = function(newUrl) {
+    var embedObject = document.getElementById('embedContent');
+    embedObject.data = newUrl;
+    contentLoaded = false;
+    clearTimeout(loadTimeout);
+    loadTimeout = setTimeout(function() {
+      if (!contentLoaded) {
+        showError("Content failed to load within the expected time. It may be blocked or unavailable.");
+      }
+    }, 10000);
+  };
+})();
 
-    window.changeContent = function(newUrl) {
-      var embedObject = document.getElementById('embedContent');
-      embedObject.data = newUrl;
-    };
-  })();
+
   </script>
 </div>
 
