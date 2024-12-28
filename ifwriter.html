@@ -121,8 +121,7 @@
   
     <iframe id="threadsFrame" name="threadsFrame" src="./Skywriter-Threads/tempifpage.html" style="width: 100%; height: calc(100vh - 100px);" frameborder="0" allowfullscreen>
 	</iframe>
-	<br> <div id="errorMessage" style="color: red;"></div>
-<br><br>
+<br><div id="errorMessage" style="color: red;"></div><br>
 				
 				</div>
 
@@ -137,35 +136,33 @@
 			</div>
 		</section><!--/.about-->
 		<!--about end -->
-		
-<!-- First script here is a global error handler, don't know if it is needed! --->
-<script>
+
+    <script>
 window.onerror = function(message, source, lineno, colno, error) {
     console.error('Global error:', message, 'Source:', source, 'Line:', lineno, 'Column:', colno, 'Error:', error);
     document.getElementById('errorMessage').textContent = 'An error occurred. Please check the console for details.';
     return true;
 };
-
-</script>
-
-    <script>
-	function loadUrl() {
-		const urlParams = new URLSearchParams(window.location.search);
-		const url = urlParams.get('url');
-		if (url) {
-			const iframe = document.getElementById('threadsFrame');
-			iframe.src = decodeURIComponent(url);
-			iframe.onerror = function() {
+	
+	
+	
+function loadUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const url = urlParams.get('url');
+    if (url) {
+        const iframe = document.getElementById('threadsFrame');
+        iframe.src = decodeURIComponent(url);
+        iframe.onerror = function() {
             console.error('Failed to load URL:', url);
             // Display an error message to the user
             document.getElementById('errorMessage').textContent = 'Failed to load the requested URL. It may be blocked or inaccessible.';
         };
-		} else {
+    } else {
         console.error('No URL provided');
         document.getElementById('errorMessage').textContent = 'No URL provided';
-		}
-	}
-	window.onload = loadUrl;
+    }
+}
+window.onload = loadUrl;
     </script>
 	
 	<script>
@@ -190,7 +187,7 @@ window.addEventListener('message', function(event) {
 	
 	
 	 <script>
-	function loadIframe(link) {
+function loadIframe(link) {
     const iframe = document.getElementById("threadsFrame");
     if (link) {
         iframe.src = link;
@@ -202,7 +199,23 @@ window.addEventListener('message', function(event) {
         console.error('No link provided to loadIframe function');
         document.getElementById('errorMessage').textContent = 'No link provided';
     }
-	}
+}
+
+
+    document.getElementById('loadButton').addEventListener('click', function() {
+      loadIframe(document.getElementById('linkInput').value);
+    });
+    
+    document.getElementById('linkDropdown').addEventListener('change', function() {
+      loadIframe(this.value);
+    });
+
+
+
+
+    document.getElementById('reloadButton').addEventListener('click', function() {
+      document.getElementById('myIframe').src = document.getElementById('myIframe').src;
+    });
 
   </script>			
 	
