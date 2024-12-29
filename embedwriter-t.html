@@ -1,0 +1,269 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Skywriter Threads embedded.</title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+		<!--flat icon css-->
+		<link rel="stylesheet" href="assets/css/flaticon.css">
+
+		<!--animate.css-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+
+        <!--owl.carousel.css-->
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="assets/css/responsive.css">
+		
+
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		
+        <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+		<base target="_parent">
+    </head>
+	
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+		
+<!-- top-area Start -->
+		<header class="top-area">
+			<div class="header-area">
+				<!-- Start Navigation -->
+			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+
+			        <div class="container">
+
+			            <!-- Start Header Navigation -->
+			            <div class="navbar-header">
+			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+			                    <i class="fa fa-bars"></i>
+			                </button>
+			                <a class="navbar-brand" href="corkiejp.html">corkiejp</a>
+			            </div><!--/.navbar-header-->
+			            <!-- End Header Navigation -->
+
+			            <!-- Collect the nav links, forms, and other content for toggling -->
+			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+			                <li class=" smooth-menu active"></li>
+								<li class="embed-link"><a href="#" onclick="changeContent('./Skywriter-Threads/Page by Nicolò Ribaudo _ @nicr.dev.html'); return false;">Handle Blog</a></li>
+								<li class="embed-link"><a href="#" onclick="changeContent('./Skywriter-Threads/Careful Github by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.blue.html'); return false;">Careful Github</a></li>
+								<li class="embed-link"><a href="#" onclick="changeContent('./Skywriter-Threads/Learned Skills by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.html'); return false;">Learned Skills</a></li>								
+								<li class="nav-link"><a href="./ifwriter.html"  target="_parent">To page with iframe!</a></li>							
+			                </ul><!--/.nav -->
+			            </div><!-- /.navbar-collapse -->
+			        </div><!--/.container-->
+			    </nav><!--/nav!
+			    <!-- End Navigation -->
+			</div><!--/.header-area-->
+
+
+		</header><!-- /.top-area-->
+		<!-- top-area End -->
+	
+
+
+		<!--about start -->
+		<section id="mysocials" class="about">
+			<div class="container">
+				<div class="about-content">
+ Click on 'Corkiejp' above to return to main page. <br>
+ When clicking on links in embed press ctrl and click to open in new window, or long press on mobile!<br>
+ <select id="postDropdown">
+  <option value="">-- Select a post --</option>
+  <option value="./Skywriter-Threads/Page by Nicolò Ribaudo _ @nicr.dev.html">Handle Blog</option>
+  <option value="./Skywriter-Threads/Careful Github by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.blue.html">Careful Github</option>
+</select>
+
+
+
+ 
+ <br>
+ <h2> Below is contained in an embed script, click on 'iframe writer' below to pass the url to that!</h2>
+    Link in menu above clears the url!
+
+<br>
+<div id="embed-container" style="text-align: center;">
+<div style="text-align: center;">
+ 
+
+  <script>
+(function() {
+  function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  }
+
+  var defaultUrl = './Skywriter-Threads/tempifpage.html';
+  var embedUrl = getParameterByName('url') || defaultUrl;
+
+  var embedContainer = document.createElement('div');
+  embedContainer.id = 'skywriter-embed';
+  embedContainer.style.width = '100%';
+  embedContainer.style.maxWidth = '1000px';
+  embedContainer.style.margin = '0 auto';
+  
+  var embedObject = document.createElement('object');
+  embedObject.id = 'embedContent';
+  embedObject.type = 'text/html';
+  embedObject.data = embedUrl;
+  embedObject.width = '100%';
+  embedObject.height = '600';
+  
+  var loadTimeout;
+  var contentLoaded = false;
+
+  function showError(message) {
+    var errorDiv = document.createElement('div');
+    errorDiv.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`;
+    embedContainer.appendChild(errorDiv);
+  }
+
+  embedObject.onload = function() {
+    clearTimeout(loadTimeout);
+    contentLoaded = true;
+    // Content loaded successfully, no need to show any error
+  };
+
+  embedObject.onerror = function() {
+    showError("Error loading content. The resource might be unavailable or blocked.");
+  };
+
+  loadTimeout = setTimeout(function() {
+    if (!contentLoaded) {
+      showError("Content failed to load within the expected time. It may be blocked or unavailable.");
+    }
+  }, 10000); // 10 second timeout
+
+  embedContainer.appendChild(embedObject);
+  
+  document.currentScript.parentNode.insertBefore(embedContainer, document.currentScript);
+
+  window.changeContent = function(newUrl) {
+    var embedObject = document.getElementById('embedContent');
+    embedObject.data = newUrl;
+    contentLoaded = false;
+    clearTimeout(loadTimeout);
+    loadTimeout = setTimeout(function() {
+      if (!contentLoaded) {
+        showError("Content failed to load within the expected time. It may be blocked or unavailable.");
+      }
+    }, 10000);
+  };
+})();
+
+
+  </script>
+</div>
+
+
+				</div>
+				<br>
+<div style="text-align: center;">
+
+<ul id="linkContainer"></ul>
+
+    <script src="./assets/js/urlscript.js"></script> <!-- Include your JavaScript here -->
+
+</div>
+				
+				</div>
+			</div>
+		</section><!--/.about-->
+		<!--about end -->
+
+	
+	
+<script>
+document.getElementById('postDropdown').addEventListener('change', function() {
+  if (this.value) {
+    document.getElementById('linkInput').value = this.value;
+    loadEmbed();
+  }
+});
+
+</script>	
+	
+
+	
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+		<script src="assets/js/jquery.js"></script>
+		  <script src="./assets/js/bsky-embed.es.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+		
+		<!-- jquery.sticky.js -->
+		<script src="assets/js/jquery.sticky.js"></script>
+		
+		<!-- for progress bar start-->
+
+		<!-- progressbar js -->
+		<script src="assets/js/progressbar.js"></script>
+
+		<!-- appear js -->
+		<script src="assets/js/jquery.appear.js"></script>
+
+		<!-- for progress bar end -->
+
+		<!--owl.carousel.js-->
+        <script src="assets/js/owl.carousel.min.js"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		
+        
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+
+
+        
+    </body>
+	
+</html>
