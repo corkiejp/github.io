@@ -103,6 +103,17 @@
 				<div class="about-content">
  Click on 'Corkiejp' above to return to main page. <br>
  When clicking on links in embed press ctrl and click to open in new window, or long press on mobile!<br><br>
+ 
+ Select content to load in embed: - 
+ <select id="contentSelector" onchange="changeContent(this.value)">
+  <option value="./Skywriter-Threads/tempifpage.html">Default Content</option>
+  <option value="./Skywriter-Threads/Page by Nicolò Ribaudo _ @nicr.dev.html">Handle Blog</option>
+  <option value="./Skywriter-Threads/Careful Github by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.blue.html">Careful Github</option>
+  <option value="./Skywriter-Threads/Learned Skills by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.html">Learned Skills</option>  
+</select>
+
+ 
+ <br>
  <h2> Below is contained in an embed script, click on 'iframe writer' below to pass the url to that!</h2>
     Link in menu above clears the url!
 
@@ -147,6 +158,13 @@
     embedContainer.appendChild(errorDiv);
   }
 
+window.changeContent = function(newUrl) {
+  var embedObject = document.getElementById('embedContent');
+  embedObject.data = newUrl;
+};
+
+
+
   embedObject.onload = function() {
     clearTimeout(loadTimeout);
     contentLoaded = true;
@@ -180,7 +198,6 @@
   };
 })();
 
-
   </script>
 </div>
 
@@ -201,10 +218,16 @@
 		<!--about end -->
 
 	
+<script>
+document.getElementById('postDropdown').addEventListener('change', function() {
+  if (this.value) {
+    document.getElementById('linkInput').value = this.value;
+    loadEmbed();
+  }
+});
+</script>	
 	
-	
-	
-	
+
 	
 		
 		<!-- Include all js compiled plugins (below), or include individual files as needed -->
