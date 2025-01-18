@@ -119,7 +119,8 @@
  Select content to load in embed: - 
  <div class="select-wrapper">
  <select id="contentSelector" onchange="changeContent(this.value)">
-  <option value="">-- Select a site --</option>
+  <option value="">-- Select a Handle --</option>
+  <option value="./bluesky_opener.html">-- Choose Handle! --</option> 
   <option value="./blueskyacc_p.html?username=irishexaminer.bsky.social">IrishExaminer</option>
   <option value="./blueskyacc_p.html?username=theguardian.com">TheGuardian</option> 
   <option value="./blueskyacc_p.html?username=irishtimes.com">TheIrishTimes</option> 
@@ -131,11 +132,11 @@
 
   <option value="./blueskyacc_p.html?username=corkbeo.bsky.social">CorkBeo.ie</option>
   <option value="./blueskyacc_p.html?username=goosed.ie">goosed.ie</option>
+  <option value="./bluesky_opener.html">-- Choose Handle! --</option> 
   
   <option value="">-- Repeats for future edit! --</option>
   
   <option value="./blueskyacc_p.html?username=irishtimes.com">TheIrishTimes</option> 
-  <option value="../blueskyacc_p.html?username=businesspost.bsky.social">businesspost</option> 
   <option value="./blueskyacc_p.html?username=politico.eu">Politico.eu</option> 
   <option value="./blueskyacc_p.html?username=euronews.com">Euronews.com</option> 
   <option value="./blueskyacc_p.html?username=news.rte.ie">RTE News</option> 
@@ -163,7 +164,7 @@
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
   }
 
-  var defaultUrl = './blueskyacc_p.html?username=irishexaminer.bsky.social';
+  var defaultUrl = './bluesky_opener.html';
   var embedUrl = getParameterByName('url') || defaultUrl;
 
   var embedContainer = document.createElement('div');
