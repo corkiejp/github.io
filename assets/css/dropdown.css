@@ -1,0 +1,50 @@
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.custom-select select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.custom-select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Styles for Webkit browsers (Chrome, Safari, new Edge) */
+.custom-select select::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-select select::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-select select::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.custom-select select::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Limit dropdown height */
+.custom-select select {
+	max-height: 50px !important; /* Adjust this value to show desired number of options */
+	overflow-y: auto !important;
+
+}
