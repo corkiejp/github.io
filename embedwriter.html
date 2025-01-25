@@ -81,12 +81,13 @@
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                <li class=" smooth-menu active"></li>
 								<li class="embed-link"><a href="#" onclick="changeContent('./Skywriter-Threads/Page by Nicolò Ribaudo _ @nicr.dev.html'); return false;">Handle Blog</a></li>
-								<li class="embed-link"><a href="#" onclick="changeContent('./Skywriter-Threads/Careful Github by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.blue.html'); return false;">Careful Github</a></li>
+								
 								<li class="embed-link"><a href="#" onclick="changeContent('./Skywriter-Threads/Learned Skills by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.html'); return false;">Learned Skills</a></li>								
 								<li class="embed-link"><a href="#" onclick="changeContent('https://skywriter.blue/pages/did:plc:qxlh6bohvep3taqhmtpipx4b/post/3lexdcj4akk2k'); return false;">Private DNS</a></li>
 								<li class="embed-link"><a href="#" onclick="changeContent('./Skywriter-Threads/Proctect_Your_PrivacybyEFF.html'); return false;">Protect your privacy</a></li>								
 								
 								<li class="nav-link"><a href="./Bluesky_Papers_ac.html"  target="_parent">Papers</a></li>
+								<li class="embed-link"><a href="#" onclick="event.preventDefault();">{More in dropdown}</a></li>
 						
 			                </ul><!--/.nav -->
 			            </div><!-- /.navbar-collapse -->
@@ -111,6 +112,7 @@
  Select content to load in embed: - 
  <select id="contentSelector" onchange="changeContent(this.value)">
   <option value="">-- Select a site --</option>
+  <option value="./bskyvideoex.html">Bsky Video Examples</option>
   <option value="./Skywriter-Threads/Page by Nicolò Ribaudo _ @nicr.dev.html">Handle Blog</option>
   <option value="./Skywriter-Threads/Careful Github by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.blue.html">Careful Github</option>
   <option value="./Skywriter-Threads/Learned Skills by John O Connell {alt for corkiejp.bsky.social} _ @corkiejp.github.io.html">Learned Skills</option>  
